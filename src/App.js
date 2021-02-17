@@ -30,6 +30,7 @@ export default class App extends React.Component {
     }
     //Khi có tin nhắn mới, sẽ push tin nhắn vào state mesgages, và nó sẽ được render ra màn hình
     newMessage(m) {
+        console.log(m);
         const messages = this.state.messages;
         let ids = _map(messages, 'id');
         let max = Math.max(...ids);
