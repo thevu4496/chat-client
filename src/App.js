@@ -21,7 +21,7 @@ export default class App extends React.Component {
     //Connetct với server nodejs, thông qua socket.io
     componentWillMount() {
         console.log(this.state.user)
-        this.socket = io('https://github.com/thevu4496/chat-client.git');
+        this.socket = io('https://servernb2.herokuapp.com/');
         this.socket.on('newMessage', (response) => {this.newMessage(response)}); //lắng nghe khi có tin nhắn mới
         this.socket.on('loginFail', (response) => {alert('Tên đã có người sử dụng')}); //login fail
         this.socket.on('loginSuccess', (response) => {this.setState({user: {id: this.socket.id, name: response}})}); //đăng nhập thành công 
